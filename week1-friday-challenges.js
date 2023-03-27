@@ -131,7 +131,7 @@ console.log(multArrRes);
 // 7) isPalinadrome
 // Check if a string s a palinadrome.
 
-const isPalindrum = strArr => {
+const isPalindrome = strArr => {
 
   const palCheckArr = [];
   for(let i = 0; i < strArr.length; i++){
@@ -149,11 +149,11 @@ const isPalindrum = strArr => {
       const res = (strRemoveSpace === reverseStr) ? strArr[i] + " : " + true : strArr[i] + " : " + false;
       palCheckArr.push(res);
     }
-    return palCheckArr
+    return palCheckArr;
     
   }
 
 const palArr = ['mom', 'hello', 'noon', 'RacEcaR', 'javascript'];
 
-const strRes = isPalindrum(palArr);
+const strRes = isPalindrome(palArr);
 console.log(strRes);
