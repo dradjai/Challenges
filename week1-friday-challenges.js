@@ -99,25 +99,61 @@ console.log(totalOdds);
 // Create a multiplication table for numbers up to 10.
 
 
-// 7) isPalinadrome
-// Check if a string is a palinadrome.
+//process.stdout.write(`${j}`);
+//123
+//246
+//369
 
-const isPalindrum = str => {
-  const charArr = [];
-  const strLowerCase = str.toLowerCase();
-  const strRemoveSpace = strLowerCase.replace(/[" "]/g, "");
-  for(let i = strRemoveSpace.length-1; i >= 0; i--){
-      charArr.push(strRemoveSpace.charAt(i));
+const totalProduct = arr => {
+
+  let product = 1;
+  for(let i = 0; i < arr.length; i++){
+    let subArray = arr[i];
+    for(let j = 0; j < subArray.length; j++){
+      product *= subArray[j];
+    }
   }
-  let reverseStr = "";
-  for(let i = 0; i < charArr.length; i++){
-      reverseStr = reverseStr + charArr[i];
-  }
-  const res = (strRemoveSpace === reverseStr) ? true : false;
-  return res;
+  return product;
+
 }
 
+const multArr = [
+  [3, 5, 2],
+  [6, 2]
+]
+
+const multArrRes = totalProduct(multArr);
+console.log(multArrRes);
 
 
-const strRes = isPalindrum('mom');
+
+
+// 7) isPalinadrome
+// Check if a string s a palinadrome.
+
+const isPalindrum = strArr => {
+
+  const palCheckArr = [];
+  for(let i = 0; i < strArr.length; i++){
+
+      const charArr = [];
+      const strLowerCase = strArr[i].toLowerCase();
+      const strRemoveSpace = strLowerCase.replace(/[" "]/g, "");
+      for(let j = strRemoveSpace.length-1; j >= 0; j--){
+          charArr.push(strRemoveSpace.charAt(j));
+      }
+      let reverseStr = "";
+      for(let j = 0; j < charArr.length; j++){
+          reverseStr = reverseStr + charArr[j];
+      }
+      const res = (strRemoveSpace === reverseStr) ? strArr[i] + " : " + true : strArr[i] + " : " + false;
+      palCheckArr.push(res);
+    }
+    return palCheckArr
+    
+  }
+
+const palArr = ['mom', 'hello', 'noon', 'RacEcaR', 'javascript'];
+
+const strRes = isPalindrum(palArr);
 console.log(strRes);
